@@ -1,12 +1,13 @@
-
 import './App.css';
+import Home from './Home';
+import Profile from './Profile';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          this will all be aws serverless!
         </p>
         <a
           className="App-link"
