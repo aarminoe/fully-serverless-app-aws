@@ -32,7 +32,7 @@ function SignUp({handleLoginState}) {
             <form onSubmit={onSubmit}>
             <input value={email} onChange={e => setEmail(e.target.value)}/>
             <input value={pass} onChange={e => setPass(e.target.value)}/>
-            <button onClick={handleCheck()} type='submit'>Submit</button>
+            <button type='submit'>Submit</button>
             </form>
         </div>
         </div>

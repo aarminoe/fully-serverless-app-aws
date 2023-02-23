@@ -24,6 +24,7 @@ function App() {
   function logOut() {
     const user = Pool.getCurrentUser()
     if (user) {
+        setLoggedIn(false)
         user.signOut()
     }
   }
