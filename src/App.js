@@ -11,20 +11,45 @@ import Status from './Status';
 
 
 function App() {
+
+  const [loggedIn, setLoggedIn] = useState(false)
+
+  function handleSessionCheck(check) {
+    setLoggedIn(check)
+  }
+
   return (
+    <div>
+    {loggedIn ?
+    <div>
+    <header>
+    <Header />
+  </header>
+      <Routes>
+        <Route path='/' element={ <Home/> }/>
+        <Route path='profile' element={ <Profile/> }/>
+      </Routes> </div> :
+      <Account>
+        <Status handleSessionCheck={handleSessionCheck}/>
+        <Login/>
+        <SignUp/>
+      </Account>
+    }
     <div className="App">
-      <header>
+      {/* <header>
         <Header />
       </header>
       <Account>
-        <Status/>
+        <Status handleSessionCheck={handleSessionCheck}/>
         <Login/>
         <SignUp/>
       </Account>
       <Routes>
         <Route path='/' element={ <Home/> }/>
         <Route path='profile' element={ <Profile/> }/>
-      </Routes>
+      </Routes> */}
+    </div>
+
     </div>
   );
 }

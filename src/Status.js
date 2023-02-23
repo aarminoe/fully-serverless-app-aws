@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AccountContext } from "./Accounts";
 
-export default () => {
+export default ({handleSessionCheck}) => {
     const [status, setStatus] = useState(false)
 
     const { getSession } = useContext(AccountContext)
@@ -11,12 +11,13 @@ export default () => {
             .then(session => {
                 console.log('Session:', session)
                 setStatus(true)
+                
             })
     }, [])
 
     return(
         <div>
-            {status ? 'You are logged in' : 'please log in'}
+            {status ? handleSessionCheck(status) : 'please log in'}
         </div>
     )
 }

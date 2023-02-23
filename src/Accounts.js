@@ -8,10 +8,10 @@ const Account = props => {
 
     const getSession = async () => 
         await new Promise((resolve, reject) => {
-            const tt = Pool.getCurrentUser()
-            console.log(tt)
-            if (tt) {
-                tt.getSession((err, session) => {
+            const user = Pool.getCurrentUser()
+            console.log(user)
+            if (user) {
+                user.getSession((err, session) => {
                     if (err) {
                         reject()
                     } else {
