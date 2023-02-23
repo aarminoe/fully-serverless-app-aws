@@ -4,7 +4,7 @@ import { AccountContext } from "./Accounts";
 export default ({handleSessionCheck}) => {
     const [status, setStatus] = useState(false)
 
-    const { getSession } = useContext(AccountContext)
+    const { getSession, logOut } = useContext(AccountContext)
 
     useEffect(() => {
         getSession()

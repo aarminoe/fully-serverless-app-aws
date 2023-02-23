@@ -56,6 +56,7 @@ const Account = props => {
         
     }
 
+
     return(
         <AccountContext.Provider value = {{authenticate, getSession}}>
             {props.children}

@@ -8,6 +8,7 @@ import SignUp from './SignUp';
 import Login from './Login';
 import { Account } from './Accounts';
 import Status from './Status';
+import Pool from './UserPool';
 
 
 function App() {
@@ -18,12 +19,20 @@ function App() {
     setLoggedIn(check)
   }
 
+  function logOut() {
+    const user = Pool.getCurrentUser()
+    if (user) {
+        user.signOut()
+    }
+  }
+
   return (
     <div>
     {loggedIn ?
     <div>
     <header>
     <Header />
+    <button onClick={logOut}>log out</button>
   </header>
       <Routes>
         <Route path='/' element={ <Home/> }/>
