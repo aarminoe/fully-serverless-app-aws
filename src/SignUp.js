@@ -3,7 +3,7 @@ import { CognitoUserPool, AuthenticationDetails, CognitoUser } from "amazon-cogn
 import UserPool from "./UserPool";
 
 
-function SignUp() {
+function SignUp({handleLoginState}) {
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
 
@@ -18,6 +18,13 @@ function SignUp() {
     }
     console.log(email)
 
+    function handleCheck() {
+        const user = UserPool.getCurrentUser()
+        if (user) {
+            handleLoginState(true)
+        }
+    }
+
     return (
         <div className="App">
 
@@ -25,7 +32,7 @@ function SignUp() {
             <form onSubmit={onSubmit}>
             <input value={email} onChange={e => setEmail(e.target.value)}/>
             <input value={pass} onChange={e => setPass(e.target.value)}/>
-            <button type='submit'>Submit</button>
+            <button onClick={handleCheck()} type='submit'>Submit</button>
             </form>
         </div>
         </div>

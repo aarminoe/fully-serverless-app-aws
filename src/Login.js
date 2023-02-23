@@ -3,7 +3,7 @@ import { CognitoUserPool, AuthenticationDetails, CognitoUser } from "amazon-cogn
 import UserPool from "./UserPool";
 import { AccountContext } from "./Accounts";
 
-function Login() {
+function Login({handleLoginState}) {
     
   const [email, setEmail] = useState('')
   const [pass, setPass] = useState('')
@@ -16,12 +16,22 @@ function Login() {
         .then(data => {
             console.log(email)
             console.log('Logged In!', data)
+            handleCheck()
         })
         .catch(err => {
             console.error('Failed to login!', err)
         })
   }
   console.log(email)
+
+  
+  function handleCheck() {
+    const user = UserPool.getCurrentUser()
+    if (user) {
+        handleLoginState(true)
+        console.log('user fuound')
+    }
+}
 
   return (
     <div>

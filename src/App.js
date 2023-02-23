@@ -15,6 +15,8 @@ function App() {
 
   const [loggedIn, setLoggedIn] = useState(false)
 
+  const user = Pool.getCurrentUser()
+  
   function handleSessionCheck(check) {
     setLoggedIn(check)
   }
@@ -24,6 +26,11 @@ function App() {
     if (user) {
         user.signOut()
     }
+  }
+
+  function handleLoginState(state) {
+    setLoggedIn(state)
+    console.log('am i here')
   }
 
   return (
@@ -40,8 +47,8 @@ function App() {
       </Routes> </div> :
       <Account>
         <Status handleSessionCheck={handleSessionCheck}/>
-        <Login/>
-        <SignUp/>
+        <Login handleLoginState={handleLoginState}/>
+        <SignUp handleLoginState={handleLoginState}/>
       </Account>
     }
     <div className="App">
