@@ -5,8 +5,8 @@ function Header() {
     return(
         <div>
             <div>
-                <Link to='/'>Home</Link>
-                <Link to='profile'>Profile</Link> 
+                {/* <Link to='/'>Home</Link>
+                <Link to='profile'>Profile</Link>  */}
             </div>
         </div>
     )
