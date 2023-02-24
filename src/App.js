@@ -2,16 +2,18 @@ import './App.css';
 import Home from './Home';
 import Profile from './Profile';
 import Header from './Header';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import SignUp from './SignUp';
 import Login from './Login';
 import { Account } from './Accounts';
 import Status from './Status';
 import Pool from './UserPool';
+import { Button } from 'react-bootstrap';
 
 
 function App() {
+  
 
   const [loggedIn, setLoggedIn] = useState(false)
 
@@ -33,6 +35,18 @@ function App() {
     setLoggedIn(state)
     console.log('am i here')
   }
+  
+  function testAPI() {
+    fetch('https://4tw31k7rw9.execute-api.us-east-1.amazonaws.com/prod', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': 'jgMIugUPS17A8TB043OiS5cs09GsBGBj3wEQe1Ad'
+      }
+    })
+    .then(resp => resp.json())
+    .then(d => console.log(d))
+  }
 
   return (
     <div>
@@ -41,6 +55,7 @@ function App() {
     <header>
     <Header />
     <button onClick={logOut}>log out</button>
+    <button onClick={testAPI}>api test</button>
   </header>
       <Routes>
         <Route path='/' element={ <Home/> }/>

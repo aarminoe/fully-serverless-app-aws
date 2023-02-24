@@ -16,7 +16,7 @@ export default ({handleSessionCheck}) => {
     }, [])
 
     return(
-        <div>
+        <div className="App">
             {status ? handleSessionCheck(status) : 'please log in'}
         </div>
     )

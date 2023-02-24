@@ -34,7 +34,7 @@ function Login({handleLoginState}) {
 }
 
   return (
-    <div>
+    <div className="App">
       <div>
         <form onSubmit={onSubmit}>
           <input value={email} onChange={e => setEmail(e.target.value)}/>

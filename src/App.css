@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+.gameboard {
+  display: inline-block;
+  text-align: center;
+  margin-right: auto;
+  margin-top: -4px;
+  width: 20px;
+  height: 20px;
+  border-color: #000000;
+  background-color: rgb(121, 107, 107);
+  border-width: 1px;
+  border-style: solid;
+}
+
+.gameboard:hover {
+  background-color: white;
+}
