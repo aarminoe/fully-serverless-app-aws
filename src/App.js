@@ -35,15 +35,25 @@ function App() {
     setLoggedIn(state)
     console.log('am i here')
   }
-  
+
+  // function testAPI() {
+  //   fetch('https://t6nszj6p4f.execute-api.us-east-1.amazonaws.com/dev/items', {
+  //     method: 'PUT',
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     },
+  //     body: JSON.stringify({
+  //       id: '123',
+  //       price: 12345,
+  //       name: 'newitem'
+  //     })
+  //   })
+  //   .then(resp => resp.json())
+  //   .then(d => console.log(d))
+  // }
+
   function testAPI() {
-    fetch('https://4tw31k7rw9.execute-api.us-east-1.amazonaws.com/prod', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': 'jgMIugUPS17A8TB043OiS5cs09GsBGBj3wEQe1Ad'
-      }
-    })
+    fetch('https://t6nszj6p4f.execute-api.us-east-1.amazonaws.com/dev/items')
     .then(resp => resp.json())
     .then(d => console.log(d))
   }
