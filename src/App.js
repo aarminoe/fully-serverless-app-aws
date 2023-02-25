@@ -10,7 +10,7 @@ import Status from './Status';
 import Pool from './UserPool';
 import { Button } from 'react-bootstrap';
 import BlogFeed from './BlogFeed';
-
+import LoginScreen from './LoginScreen';
 
 function App() {
   
@@ -63,9 +63,7 @@ function App() {
         <Route path='blogs' element={ <BlogFeed blogPosts={blogPosts} onHandleNewPostState={onHandleNewPostState}/>}/>
       </Routes> </div> :
       <Account>
-        <Status handleSessionCheck={handleSessionCheck}/>
-        <Login handleLoginState={handleLoginState}/>
-        <SignUp handleLoginState={handleLoginState}/>
+        <LoginScreen handleLoginState={handleLoginState} handleSessionCheck={handleSessionCheck}/>
       </Account>
     }
     </div>
