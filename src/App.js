@@ -43,6 +43,11 @@ function App() {
     .then(d => setBlogPosts(d.reverse()))
   }, [])
 
+  function onHandleNewPostState(newPost, newBlog) {
+    const newPostList = [...blogPosts.reverse(), {blog:newBlog}]
+    setBlogPosts(newPostList.reverse())
+  }
+
 
 
   return (
@@ -55,7 +60,7 @@ function App() {
   </header>
       <Routes>
         <Route path='/' element={ <Home /> }/>
-        <Route path='blogs' element={ <BlogFeed blogPosts={blogPosts} />}/>
+        <Route path='blogs' element={ <BlogFeed blogPosts={blogPosts} onHandleNewPostState={onHandleNewPostState}/>}/>
       </Routes> </div> :
       <Account>
         <Status handleSessionCheck={handleSessionCheck}/>

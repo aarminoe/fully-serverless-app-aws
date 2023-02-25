@@ -2,42 +2,43 @@ import React from "react";
 import { useState } from "react";
 
 
-function BlogFeed({blogPosts}) {
+function BlogFeed({blogPosts, onHandleNewPostState}) {
 
     const [newBlog, setNewBlog] = useState('')
 
     console.log(newBlog)
-     function testAPI() {
-    fetch('https://t6nszj6p4f.execute-api.us-east-1.amazonaws.com/dev/items', {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        price: new Date(),
-        name: newBlog
-      })
-    })
-    .then(resp => resp.json())
-    .then(d => console.log(d))
-    console.log(new Date())
-  }
-
-    function handleNewBlogPost(e) {
+     function handleNewBlogPost(e) {
         e.preventDefault()
         fetch('https://t6nszj6p4f.execute-api.us-east-1.amazonaws.com/dev/items', {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                date: new Date(),
-                blog: newBlog, 
-            })
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            price: new Date(),
+            name: newBlog
+        })
         })
         .then(resp => resp.json())
-        .then(d => console.log(d))
+        .then(d => onHandleNewPostState(d, newBlog))
+        console.log(new Date())
     }
+
+    // function handleNewBlogPost(e) {
+    //     e.preventDefault()
+    //     fetch('https://t6nszj6p4f.execute-api.us-east-1.amazonaws.com/dev/items', {
+    //         method: 'PUT',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({
+    //             date: new Date(),
+    //             blog: newBlog, 
+    //         })
+    //     })
+    //     .then(resp => resp.json())
+    //     .then(d => console.log(d))
+    // }
 
     console.log(blogPosts)
     return(
@@ -51,7 +52,6 @@ function BlogFeed({blogPosts}) {
                     </p>
                 </form>
             </div>
-            <button onClick={testAPI}>here</button>
             <div>
                 {blogPosts.map((b) => {
                     return <div key={b.date}>{b.blog}</div>
