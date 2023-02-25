@@ -53,3 +53,11 @@
 .gameboard:hover {
   background-color: white;
 }
+
+.login-card {
+  margin-top: 100px;
+  width: 400px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}

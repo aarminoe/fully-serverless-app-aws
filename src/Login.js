@@ -2,6 +2,8 @@ import React, { useState, useContext } from "react";
 import { CognitoUserPool, AuthenticationDetails, CognitoUser } from "amazon-cognito-identity-js";
 import UserPool from "./UserPool";
 import { AccountContext } from "./Accounts";
+import { Button } from "@mui/material";
+import {Input} from "@mui/material";
 
 function Login({handleLoginState}) {
     
@@ -37,9 +39,9 @@ function Login({handleLoginState}) {
     <div className="App">
       <div>
         <form onSubmit={onSubmit}>
-          <input value={email} onChange={e => setEmail(e.target.value)}/>
-          <input value={pass} type='password' onChange={e => setPass(e.target.value)}/>
-          <button type='submit'>Login</button>
+          <Input value={email} onChange={e => setEmail(e.target.value)}/>
+          <Input value={pass} type='password' onChange={e => setPass(e.target.value)}/>
+          <Button type='submit'>Login</Button>
         </form>
       </div>
     </div>

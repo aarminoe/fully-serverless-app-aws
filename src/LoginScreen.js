@@ -2,14 +2,15 @@ import React from "react";
 import Login from "./Login";
 import SignUp from "./SignUp";
 import Status from "./Status";
+import { Card } from "@mui/material";
 
 function LoginScreen({handleLoginState, handleSessionCheck}) {
     return(
-        <div>
+        <Card className="login-card">
             <Status handleSessionCheck={handleSessionCheck}/>
             <Login handleLoginState={handleLoginState}/>
             <SignUp/>
-        </div>
+        </Card>
     )
 }
 export default LoginScreen
