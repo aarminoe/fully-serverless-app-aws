@@ -16,6 +16,7 @@ function App() {
   
 
   const [loggedIn, setLoggedIn] = useState(false)
+  const [blogPosts, setBlogPosts] = useState(null)
 
   const user = Pool.getCurrentUser()
   
@@ -52,11 +53,13 @@ function App() {
   //   .then(d => console.log(d))
   // }
 
-  function testAPI() {
+  useEffect(() => {
     fetch('https://t6nszj6p4f.execute-api.us-east-1.amazonaws.com/dev/items')
     .then(resp => resp.json())
-    .then(d => console.log(d))
-  }
+    .then(d => setBlogPosts(d))
+  }, [])
+
+
 
   return (
     <div>
@@ -65,10 +68,9 @@ function App() {
     <header>
     <Header />
     <button onClick={logOut}>log out</button>
-    <button onClick={testAPI}>api test</button>
   </header>
       <Routes>
-        <Route path='/' element={ <Home/> }/>
+        <Route path='/' element={ <Home blogPosts={blogPosts}/> }/>
         <Route path='profile' element={ <Profile/> }/>
       </Routes> </div> :
       <Account>
