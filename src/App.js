@@ -10,6 +10,7 @@ import { Account } from './Accounts';
 import Status from './Status';
 import Pool from './UserPool';
 import { Button } from 'react-bootstrap';
+import BlogFeed from './BlogFeed';
 
 
 function App() {
@@ -37,22 +38,6 @@ function App() {
     console.log('am i here')
   }
 
-  // function testAPI() {
-  //   fetch('https://t6nszj6p4f.execute-api.us-east-1.amazonaws.com/dev/items', {
-  //     method: 'PUT',
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify({
-  //       id: '123',
-  //       price: 12345,
-  //       name: 'newitem'
-  //     })
-  //   })
-  //   .then(resp => resp.json())
-  //   .then(d => console.log(d))
-  // }
-
   useEffect(() => {
     fetch('https://t6nszj6p4f.execute-api.us-east-1.amazonaws.com/dev/items')
     .then(resp => resp.json())
@@ -70,8 +55,9 @@ function App() {
     <button onClick={logOut}>log out</button>
   </header>
       <Routes>
-        <Route path='/' element={ <Home blogPosts={blogPosts}/> }/>
+        <Route path='/' element={ <Home /> }/>
         <Route path='profile' element={ <Profile/> }/>
+        <Route path='blogs' element={ <BlogFeed blogPosts={blogPosts} />}/>
       </Routes> </div> :
       <Account>
         <Status handleSessionCheck={handleSessionCheck}/>
@@ -79,21 +65,6 @@ function App() {
         <SignUp handleLoginState={handleLoginState}/>
       </Account>
     }
-    <div className="App">
-      {/* <header>
-        <Header />
-      </header>
-      <Account>
-        <Status handleSessionCheck={handleSessionCheck}/>
-        <Login/>
-        <SignUp/>
-      </Account>
-      <Routes>
-        <Route path='/' element={ <Home/> }/>
-        <Route path='profile' element={ <Profile/> }/>
-      </Routes> */}
-    </div>
-
     </div>
   );
 }

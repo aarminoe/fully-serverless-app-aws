@@ -31,11 +31,11 @@ function SignUp({handleLoginState}) {
         <div>
             <form onSubmit={onSubmit}>
             <input value={email} onChange={e => setEmail(e.target.value)}/>
-            <input value={pass} onChange={e => setPass(e.target.value)}/>
+            <input value={pass} type='password' onChange={e => setPass(e.target.value)}/>
             <button type='submit'>Submit</button>
             </form>
         </div>
-        </div>
+        </div> 
     );
 
 }

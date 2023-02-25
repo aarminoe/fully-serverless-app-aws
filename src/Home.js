@@ -1,17 +1,13 @@
 import React from "react";
-import GameBoard from "./GameBoard";
-import { useState } from "react";
 
-function Home({blogPosts}) {
-
-    console.log(blogPosts)
+function Home() {
 
     return(
         <div>
             <header>Welcome!</header>
             
             <div>
-                
+                home
             </div>
         </div>
     )

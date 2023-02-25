@@ -7,6 +7,7 @@ function Header() {
             <div>
                 <Link to='/'>Home</Link>
                 <Link to='profile'>Profile</Link> 
+                <Link to='blogs'>Blogs</Link>
             </div>
         </div>
     )
