@@ -1,6 +1,5 @@
 import './App.css';
 import Home from './Home';
-import Profile from './Profile';
 import Header from './Header';
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
@@ -56,7 +55,6 @@ function App() {
   </header>
       <Routes>
         <Route path='/' element={ <Home /> }/>
-        <Route path='profile' element={ <Profile/> }/>
         <Route path='blogs' element={ <BlogFeed blogPosts={blogPosts} />}/>
       </Routes> </div> :
       <Account>
