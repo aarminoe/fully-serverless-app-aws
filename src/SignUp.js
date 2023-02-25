@@ -9,14 +9,22 @@ import {Input} from "@mui/material";
 function SignUp({handleLoginState}) {
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
+    const [errorSignUp, setErrorSignUp] = useState(false)
+    const [error, setError] = useState('')
+    const [directToLogin, setDirectToLogin] = useState(false)
 
     const attributeList = [];
 
     function onSubmit(e) {
         e.preventDefault()
         UserPool.signUp(email, pass, attributeList, null, (err, data) => {
-            if (err) console.error(err)
-            console.log(data)
+            if (err) {
+                console.error(err)
+                setError(err)
+                setErrorSignUp(true)
+            } else {
+                setDirectToLogin(true)
+            }
         })
     }
     console.log(email)
@@ -27,6 +35,7 @@ function SignUp({handleLoginState}) {
             handleLoginState(true)
         }
     }
+    console.log(error)
 
     return (
         <div className="App">
@@ -35,8 +44,26 @@ function SignUp({handleLoginState}) {
             <form onSubmit={onSubmit}>
             <Input value={email} onChange={e => setEmail(e.target.value)}/>
             <Input value={pass} type='password' onChange={e => setPass(e.target.value)}/>
-            <Button type='submit'>Submit</Button>
+            <Button type='submit'>Sign Up</Button>
             </form>
+            <div>
+                {errorSignUp && directToLogin == false ? <div>
+                    <p>
+                        Please enter a valid email
+                    </p>
+                    <p>
+                        Password must contain:
+                        <ul className="error-list">
+                            <li>An uppercase letter</li>
+                            <li>A number</li>
+                            <li>A special character</li>  
+                        </ul>
+                    </p> 
+                </div> : null}
+                {directToLogin ? <div className="signup-success-message">
+                    Welcome! Please Log In!
+                </div> : null}
+            </div>
         </div>
         </div> 
     );

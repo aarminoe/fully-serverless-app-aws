@@ -4,8 +4,9 @@ import Pool from "./UserPool";
 
 const AccountContext = createContext();
 
-const Account = props => {
+function Account(props) {
 
+    console.log(Pool)
     const getSession = async () => 
         await new Promise((resolve, reject) => {
             const user = Pool.getCurrentUser()

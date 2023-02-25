@@ -6,11 +6,15 @@ import { Card } from "@mui/material";
 
 function LoginScreen({handleLoginState, handleSessionCheck}) {
     return(
-        <Card className="login-card">
-            <Status handleSessionCheck={handleSessionCheck}/>
-            <Login handleLoginState={handleLoginState}/>
-            <SignUp/>
-        </Card>
+        <div>
+            <h1 className="login-title">Welcome to Safe Spot</h1>
+            <Card className="login-card">
+                <Status handleSessionCheck={handleSessionCheck}/>
+                <Login handleLoginState={handleLoginState}/>
+                <SignUp/>
+            </Card>
+
+        </div>
     )
 }
 export default LoginScreen
