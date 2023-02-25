@@ -41,7 +41,7 @@ function App() {
   useEffect(() => {
     fetch('https://t6nszj6p4f.execute-api.us-east-1.amazonaws.com/dev/items')
     .then(resp => resp.json())
-    .then(d => setBlogPosts(d))
+    .then(d => setBlogPosts(d.reverse()))
   }, [])
 
 
