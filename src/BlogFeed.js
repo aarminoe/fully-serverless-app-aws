@@ -1,5 +1,8 @@
 import React from "react";
 import { useState } from "react";
+import { Button } from "@mui/material";
+import {Input} from "@mui/material";
+import { TextareaAutosize } from "@mui/material";
 
 
 function BlogFeed({blogPosts, onHandleNewPostState}) {
@@ -20,7 +23,9 @@ function BlogFeed({blogPosts, onHandleNewPostState}) {
         })
         })
         .then(resp => resp.json())
-        .then(d => onHandleNewPostState(d, newBlog))
+        .then(d => {
+            onHandleNewPostState(d, newBlog, setNewBlog)
+        })
         console.log(new Date())
     }
 
@@ -44,11 +49,11 @@ function BlogFeed({blogPosts, onHandleNewPostState}) {
     return(
         <div>
             <div>
-                <h3>Create new blog:</h3>
+                <h3>What's on your mind?</h3>
                 <form on onSubmit={handleNewBlogPost}>
-                    <input value={newBlog}  onChange={(e) => setNewBlog(e.target.value)} />
+                    <TextareaAutosize className="blog-input-box" value={newBlog}  onChange={(e) => setNewBlog(e.target.value)} />
                     <p>
-                        <button type="submit">Submit Blog</button>
+                        <Button type="submit">Click here to post</Button>
                     </p>
                 </form>
             </div>

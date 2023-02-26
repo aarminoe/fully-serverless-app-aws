@@ -45,7 +45,7 @@ function Login({handleLoginState}) {
           <Input value={pass} type='password' onChange={e => setPass(e.target.value)}/>
           <Button type='submit'>Login</Button>
         </form>
-        <div className="login-fail">Username/Password Not Found</div>
+        {loginFailure ? <div className="login-fail">Username/Password Not Found</div> : null}
       </div>
     </div>
   );

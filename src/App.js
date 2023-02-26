@@ -43,9 +43,10 @@ function App() {
     .then(d => setBlogPosts(d.reverse()))
   }, [])
 
-  function onHandleNewPostState(newPost, newBlog) {
+  function onHandleNewPostState(newPost, newBlog, setNewBlog) {
     const newPostList = [...blogPosts.reverse(), {blog:newBlog}]
     setBlogPosts(newPostList.reverse())
+    setNewBlog('')
   }
 
 

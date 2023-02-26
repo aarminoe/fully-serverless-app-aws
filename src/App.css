@@ -82,6 +82,7 @@
 .signup-success-message {
   color: green;
   font-size: small;
+  margin-bottom: 20px;
 }
 
 .login-fail {
@@ -98,6 +99,13 @@
   text-align: center;
 }
 
-.logout-btn{
+.blog-input-box {
+  width: 800px;
+  margin-left: 30px;
+  resize: none;
   
+}
+
+.logout-btn{
+
 }
