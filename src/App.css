@@ -103,9 +103,15 @@
   width: 800px;
   margin-left: 30px;
   resize: none;
-  
+
 }
 
 .logout-btn{
 
+}
+
+.single-blog {
+  margin-top: 20px;
+  width: 900px;
+  margin-left: 50px;
 }

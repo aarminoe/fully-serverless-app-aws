@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button } from "@mui/material";
 import {Input} from "@mui/material";
 import { TextareaAutosize } from "@mui/material";
+import {Card} from "@mui/material";
 
 
 function BlogFeed({blogPosts, onHandleNewPostState}) {
@@ -59,7 +60,7 @@ function BlogFeed({blogPosts, onHandleNewPostState}) {
             </div>
             <div>
                 {blogPosts.map((b) => {
-                    return <div key={b.date}>{b.blog}</div>
+                    return <Card className="single-blog" key={b.date}>{b.blog}</Card>
                 })}
             </div>
         </div>
