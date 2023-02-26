@@ -48,11 +48,13 @@ function SignUp({handleLoginState}) {
             </form>
             <div>
                 {errorSignUp && directToLogin == false ? <div>
-                    <p>
+                    <p className="password-must-have-message">
                         Please enter a valid email
                     </p>
-                    <p>
+                    <p className="password-must-have-message"> 
                         Password must contain:
+                    </p>
+                    <p>
                         <ul className="error-list">
                             <li>An uppercase letter</li>
                             <li>A number</li>

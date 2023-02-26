@@ -9,6 +9,7 @@ function Login({handleLoginState}) {
     
   const [email, setEmail] = useState('')
   const [pass, setPass] = useState('')
+  const [loginFailure, setLoginFailure] = useState(false)
 
   const { authenticate } = useContext(AccountContext)
 
@@ -22,6 +23,7 @@ function Login({handleLoginState}) {
         })
         .catch(err => {
             console.error('Failed to login!', err)
+            setLoginFailure(true)
         })
   }
   console.log(email)
@@ -43,6 +45,7 @@ function Login({handleLoginState}) {
           <Input value={pass} type='password' onChange={e => setPass(e.target.value)}/>
           <Button type='submit'>Login</Button>
         </form>
+        <div className="login-fail">Username/Password Not Found</div>
       </div>
     </div>
   );

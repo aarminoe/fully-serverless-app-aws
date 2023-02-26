@@ -76,8 +76,20 @@
   margin-right: 100px;
   margin-left: 80px;
   color: red;
+  font-size: small;
 }
 
 .signup-success-message {
   color: green;
+  font-size: small;
+}
+
+.login-fail {
+  color: red;
+  font-size: small;
+}
+.password-must-have-message {
+  font-size: small;
+  margin-top: -5px;
+  margin-bottom: 10px;
 }
