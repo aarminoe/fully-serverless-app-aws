@@ -8,7 +8,7 @@ import Login from './Login';
 import { Account } from './Accounts';
 import Status from './Status';
 import Pool from './UserPool';
-import { Button } from 'react-bootstrap';
+import { Button } from '@mui/material';
 import BlogFeed from './BlogFeed';
 import LoginScreen from './LoginScreen';
 
@@ -56,7 +56,7 @@ function App() {
     <div>
     <header>
     <Header />
-    <button onClick={logOut}>log out</button>
+    <Button className='logout-btn' onClick={logOut}>log out</Button>
   </header>
       <Routes>
         <Route path='/' element={ <Home /> }/>
