@@ -97,6 +97,9 @@
 
 .home-page{
   text-align: center;
+  width: 800px;
+  margin-left: 350px;
+  font-size: xx-large;
 }
 
 .blog-input-box {
@@ -117,4 +120,8 @@
 
 .click-to-post-btn {
   margin-left: 30px;
+}
+
+.splash-message {
+  margin-bottom: 30px;
 }
