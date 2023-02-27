@@ -50,11 +50,11 @@ function BlogFeed({blogPosts, onHandleNewPostState}) {
     return(
         <div>
             <div>
-                <h3>What's on your mind?</h3>
+                <h3 className="above-blog-title">What's on your mind?</h3>
                 <form on onSubmit={handleNewBlogPost}>
                     <TextareaAutosize className="blog-input-box" value={newBlog}  onChange={(e) => setNewBlog(e.target.value)} />
-                    <p>
-                        <Button type="submit">Click here to post</Button>
+                    <p className="click-to-post-btn">
+                        <Button  type="submit">Click here to post</Button>
                     </p>
                 </form>
             </div>
