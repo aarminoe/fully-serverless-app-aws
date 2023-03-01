@@ -1,14 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Toolbar from '@mui/material/Toolbar';
+import AppBar from '@mui/material/AppBar';
 
 function Header() {
     return(
-        <div>
-            <div>
+        <AppBar position="static">
+            <Toolbar>
                 <Link to='/'>Home</Link>
                 <Link to='blogs'>Blogs</Link>
-            </div>
-        </div>
+            </Toolbar>
+        </AppBar>
     )
 }
 
