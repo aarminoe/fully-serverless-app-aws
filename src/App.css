@@ -134,3 +134,12 @@
   font-size: x-large;
   color: white;
 }
+
+.login-page{
+  background-color: #61dafb;
+  height: 400px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 25%;
+}

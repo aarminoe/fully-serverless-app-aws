@@ -17,7 +17,7 @@ export default ({handleSessionCheck}) => {
 
     return(
         <div className="status">
-            {status ? handleSessionCheck(status) : 'Please Log In'}
+            {status ? handleSessionCheck(status) : 'Please Log In or Sign Up with Email and Password'}
         </div>
     )
 }
